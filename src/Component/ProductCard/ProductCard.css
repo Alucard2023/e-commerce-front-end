@@ -1,0 +1,101 @@
+.product-card{
+    border-radius: 1em;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 15px;
+   
+    
+
+}
+.title{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    height: 20px;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 40px;
+    color: #080808;
+    font-size: 18px;
+    font-weight: 400;
+}
+.top{
+    width:250px;
+    height: 250px;
+    padding-top: 20px;
+    padding-left: 20px;
+    
+}
+.desc{
+    font-size: 14px;
+    text-align: center;
+    font-family: Georgia, serif;
+    padding-bottom: 30px;
+    
+}
+.card {
+    transition: all 0.5s ease-in-out;
+    border-radius: 1em;
+    background-color: #E2E6E8
+
+    ;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 10px rgba(194, 121, 121, 0.3);
+  }
+  .buttom {
+    
+    box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 0.6em;
+  color: rgb(26, 18, 18);
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 0.8rem;
+  font-weight: 200;
+  line-height: 1;
+  margin: 20px;
+  padding: 0.8em 0.6em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+ 
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    outline: 0;
+  }
+
+  border-color: rgb(109, 109, 224);
+  color: #1d0606;
+  box-shadow: 0 0 40px 40px rgb(124, 124, 221) inset, 0 0 0 0 rgb(123, 123, 224);
+  transition: all 150ms ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 10px 0 rgb(164, 164, 238) inset, 0 0 10px 4px rgb(110, 110, 231);
+  }
+}
+.price-and-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .price {
+    font-size: 30px;
+    color: red; /* Couleur rouge pour le prix */
+    padding-left: 10px;
+    padding-top: 50px;
+  }
+
+
+
+
+  
