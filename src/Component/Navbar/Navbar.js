@@ -15,6 +15,7 @@ import { logout } from '../../Js/Actions/user';
 
 const Navbar = () => {
 	const isAuth = useSelector((state) => state.userReducer.isAuth);
+	console.log(isAuth)
 	const dispatch = useDispatch(); // Initialisez dispatch
 
 
@@ -50,23 +51,29 @@ return (
 		</NavBtn>;
 
 
-        {isAuth ? <Nav.Link href="/profile">Profile</Nav.Link>:null}
+		
+		{isAuth ? <Nav.Link href="/profile">Profile</Nav.Link> : null}
 
 	
+		{ isAuth?
+( <NavBtn href="/"onClick={()=>dispatch(logout())} >logout</NavBtn> )
+:
+( <div>
+	<Nav.Link href="/signin">SignIn </Nav.Link>
+	<Nav.Link href="/Register">Registr</Nav.Link>
+</div>
 
-	{ isAuth?
-	( <div > <Nav.Link href="/"onClick={()=>dispatch(logout())} >logout</Nav.Link> </div>)
-	:
-	( <div>
-		<Nav.Link href="/signin">SignIn </Nav.Link>
-		<Nav.Link href="/Register">Register</Nav.Link>
-	</div>
 	
-		
-		
-		)
+	
+	)
 }
+
+	
+	
+
+     
 </Nav>
+
 	</>
 
 );
