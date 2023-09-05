@@ -8,18 +8,18 @@ NavMenu,
 NavBtn,
 NavBtnLink,
 } from '../Navbar/NavbarElements';
-import { useSelector,useDispatch } from "react-redux";
+import {useDispatch,useSelector } from "react-redux";
 import { logout } from '../../Js/Actions/user';
 
 
 
 const Navbar = () => {
-	const isAuth = useSelector((state) => state.userReducer.isAuth);
-	console.log(isAuth)
 	const dispatch = useDispatch(); // Initialisez dispatch
+	const isAuth = useSelector((state) => state.userReducer.isAuth);
 
 
 return (
+
 	<>
 	<Nav>
 		<Bars />
@@ -40,27 +40,25 @@ return (
 			Blogs
 		</NavLink>
 
-		<NavLink to='/Register'  activeclassname="active">
-			Register
-		</NavLink>
 		
 		</NavMenu>
 
 		<NavBtn className='btn'>
-		<NavBtnLink to='/signin'>SignIn </NavBtnLink>
-		</NavBtn>;
+		</NavBtn>
 
 
 		
-		{isAuth ? <Nav.Link href="/profile">Profile</Nav.Link> : null}
+		{isAuth? 		<NavBtnLink to='/profile'> profile </NavBtnLink>
+ : null}
 
 	
 		{ isAuth?
-( <NavBtn href="/"onClick={()=>dispatch(logout())} >logout</NavBtn> )
+( 	<NavBtnLink href="/"onClick={()=>dispatch(logout())}>logout </NavBtnLink>
+)
 :
 ( <div>
-	<Nav.Link href="/signin">SignIn </Nav.Link>
-	<Nav.Link href="/Register">Registr</Nav.Link>
+		<NavBtnLink to='/signin'>SignIn </NavBtnLink>
+	<NavBtnLink to='/Register'>Register</NavBtnLink>
 </div>
 
 	

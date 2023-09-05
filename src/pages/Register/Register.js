@@ -22,7 +22,7 @@ const navigate = useNavigate()
 const isAuth = useSelector((state) => state.userReducer.isAuth)
  const handleChange = (e) => {
    setNewUser({...newUser , [e.target.name] : e.target.value})
-   console.log(newUser)
+   
  }
 
  const handleUser = (e) => {

@@ -65,6 +65,7 @@ export const NavBtn = styled.nav`
 
   display: flex;
   align-items: center;
+
  justify-content:flex-end;
  @media screen and (max-width: 768px) {
   display: none;
@@ -76,9 +77,10 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
 
-  border-radius: 4px;
+  border-radius: 20px;
   background: #C3085C;
   padding: 10px 40px;
+  margin:2px;
   color: #fff;
   border: none;
   cursor: pointer;

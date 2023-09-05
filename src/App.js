@@ -9,8 +9,9 @@ import Navbar from './Component/Navbar/Navbar';
 import Signin from './pages/signin/Signin';
 import Products from './pages/Products/Products';
 import RegisterAdmin from './pages/Register/RegisterAdmin';
-import Error from './pages/Error/Error';
 import Profile from './pages/Profile/Profile';
+import EditProfile from './Component/EditProfile/EditProfile';
+import Editpassword from'./Component/EditProfile/Editpassword';
 
 
 
@@ -31,10 +32,12 @@ function App() {
         <Route path='/products' element={<Products />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/register' element={<Register />} />
-        <Route path="/*" element={<Error/>} />
         <Route path='/signin' element={<Signin />} />
         <Route path="/Admin" element={<RegisterAdmin />} />
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/edit/:id" element={<EditProfile />} />
+        <Route path='/editpassword/:id' element={<Editpassword/>} />
+          
 
 
         
