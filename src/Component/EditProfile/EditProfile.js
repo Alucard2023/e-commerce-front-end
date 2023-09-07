@@ -20,6 +20,7 @@ const EditProfile = () => {
   
     const handleChange = (e) => {
       setNewUser( {...newUser,[e.target.name] : e.target.value})   }
+    
     const user = useSelector((state)=> state.userReducer.user)  
     const handleEdit = () => {
       dispatch(edituser(match.params.id ,newUser))
@@ -39,7 +40,7 @@ const EditProfile = () => {
       <div className='cadre2'>
 <div className='cadre7'>
 
-         <Form onSubmit={handleEdit }>
+         <Form onSubmit={handleEdit}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label  className='forms'>Prénom</Form.Label>
     <Form.Control type="text" placeholder={`${userToGet.firstname}`} name='firstname' onChange={handleChange} value={newUser.firstname} />

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import "./Navbar.css";
+
 import {
 Nav,
 NavLink,
@@ -9,13 +10,29 @@ NavBtn,
 NavBtnLink,
 } from '../Navbar/NavbarElements';
 import {useDispatch,useSelector } from "react-redux";
-import { logout } from '../../Js/Actions/user';
+import { logout,current } from '../../Js/Actions/user';
+import { currentAdmin } from "../../Js/Actions/Admin";
 
 
 
 const Navbar = () => {
 	const dispatch = useDispatch(); // Initialisez dispatch
 	const isAuth = useSelector((state) => state.userReducer.isAuth);
+	const user = useSelector((state) => state.userReducer.user);
+
+    
+	useEffect(() => {
+		if (localStorage.getItem("token")) {
+		  dispatch(current());
+		}
+	  }, [dispatch]);
+
+	  useEffect(() => {
+		if (localStorage.getItem("token")) {
+		  dispatch(currentAdmin());
+		}
+	  }, [dispatch]);
+
 
 
 return (
@@ -48,12 +65,10 @@ return (
 
 
 		
-		{isAuth? 		<NavBtnLink to='/profile'> profile </NavBtnLink>
- : null}
+		{isAuth ? <NavBtnLink to={`/profile/${user._id}`}>Profile</NavBtnLink> : null}
 
-	
 		{ isAuth?
-( 	<NavBtnLink href="/"onClick={()=>dispatch(logout())}>logout </NavBtnLink>
+( 	<NavBtnLink to="/" onClick={()=>dispatch(logout())}>logout </NavBtnLink>
 )
 :
 ( <div>
@@ -66,10 +81,6 @@ return (
 	)
 }
 
-	
-	
-
-     
 </Nav>
 
 	</>

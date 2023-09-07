@@ -86,6 +86,8 @@ const Signin = () => {
                     type={passwordShown ? "text" : "password"}
                     placeholder="Mot de passe"
                     name="password"
+                    autoComplete="current-password" // Ajoutez ceci
+
                     onChange={handleChange}
                   />
                 </div>

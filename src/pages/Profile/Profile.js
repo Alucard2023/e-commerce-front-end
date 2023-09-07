@@ -23,13 +23,13 @@ const Profile = () => {
         <link rel="canonical" />
       </Helmet>
 
-      <h1 className="Profile">PROFIL</h1>
+      <h1 className="Profile">PROFILE</h1>
       {isAuth ? (
         <div align="center" className="profileCard">
           <Card style={{ width: "20rem" }}>
             <Card.Img src={userico} />
             <Card.Body>
-              <Card.Title>-Profil-</Card.Title>
+              <Card.Title>-Profile-</Card.Title>
 
               <Card.Text>
                 <span className="forms">Prénom :</span> {user && user.firstname}
@@ -70,7 +70,7 @@ const Profile = () => {
                   <a
                     {...triggerHandler}
                     ref={ref}
-                    onClick={() => navigate(`/editPassword/${user._id}`)}
+                    onClick={() => navigate(`/Editpassword/${user._id}`)}
                   >
                     <img src={edit} className="editico" alt="edit" />
                   </a>
