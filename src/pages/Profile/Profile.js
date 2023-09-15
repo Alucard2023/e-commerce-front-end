@@ -14,6 +14,8 @@ const Profile = () => {
   const admin = useSelector((state) => state.AdminReducer.admin);
   const isAuthAdmin = useSelector((state) => state.AdminReducer.isAuthAdmin);
   const navigate = useNavigate();
+  const allowedAdminId = "6500ad79f959769b7043502a"; // ID autorisé à accéder au profil admin
+
 
   return (
     <div>
@@ -30,6 +32,10 @@ const Profile = () => {
             <Card.Img src={userico} />
             <Card.Body>
               <Card.Title>-Profile-</Card.Title>
+              <Card.Text>
+              {user._id === allowedAdminId ? <span className="forms">admin</span> : null}
+              </Card.Text>
+
 
               <Card.Text>
                 <span className="forms">Prénom :</span> {user && user.firstname}
@@ -79,7 +85,7 @@ const Profile = () => {
             </Card.Body>
           </Card>
         </div>
-      ) : isAuthAdmin ? (
+      ) : isAuthAdmin && admin ? (
         <div align="center" className="profileCard">
           <Card style={{ width: "20rem" }}>
             <Card.Img src={userico} />

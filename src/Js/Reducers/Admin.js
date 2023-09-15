@@ -1,4 +1,4 @@
-import { CLEAR_ERRORSA, CLEAR_SUCCESSA, CURRENT_ADMIN, FAIL_ADMIN, GET_ALLUSERS, LOAD_ADMIN, LOGIN_ADMIN, LOGOUT_ADMIN, REGISTER_ADMIN} from '../ActionsType/Admin'
+import { CLEAR_ERRORSA, CLEAR_SUCCESSA, CURRENT_ADMIN,GET_ADMIN, FAIL_ADMIN, GET_ALLUSERS, LOAD_ADMIN, LOGIN_ADMIN, LOGOUT_ADMIN, REGISTER_ADMIN} from '../ActionsType/Admin'
 
 
 
@@ -17,7 +17,7 @@ listusers : [],
 const AdminReducer = ( state = InitialState , {type,payload}) => {
     switch (type) {
         case REGISTER_ADMIN:
-            localStorage.setItem("token" , payload.token) 
+            localStorage.setItem("token" , payload.token)
         case LOAD_ADMIN:
             return {...state, loadAdmin : true}
         case LOGIN_ADMIN :
@@ -25,6 +25,14 @@ const AdminReducer = ( state = InitialState , {type,payload}) => {
             return{...state , loadAdmin : false , admin : payload.admin ,isAuthAdmin : true, isAdmin : true } 
         case CURRENT_ADMIN : 
              return {...state , admin:payload , isAdmin : true, isAuthAdmin : true , loadAdmin: false}  
+             case GET_ADMIN:
+    return {
+        ...state,
+        admin: payload.admin, // Update the admin data in your Redux store
+        isAdmin: true, // Set the isAdmin flag to true
+        isAuthAdmin: true, // Set the isAuthAdmin flag to true
+        loadAdmin: false, // Set loading to false
+    }
          case GET_ALLUSERS : 
              return {...state , listusers:payload , isAdmin : true, isAuthAdmin : true , loadAdmin: false}       
         case LOGOUT_ADMIN :

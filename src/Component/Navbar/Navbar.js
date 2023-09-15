@@ -15,10 +15,17 @@ import { currentAdmin } from "../../Js/Actions/Admin";
 
 
 
+
 const Navbar = () => {
 	const dispatch = useDispatch(); // Initialisez dispatch
 	const isAuth = useSelector((state) => state.userReducer.isAuth);
 	const user = useSelector((state) => state.userReducer.user);
+	//const isAuthAdmin = useSelector((state) => state.AdminReducer.isAuthAdmin);
+	//const admin = useSelector((state) => state.AdminReducer.admin);
+  //const isAdmin = useSelector((state) => state.adminReducer.isAdmin);
+
+    
+
 
     
 	useEffect(() => {
@@ -67,6 +74,10 @@ return (
 		
 		{isAuth ? <NavBtnLink to={`/profile/${user._id}`}>Profile</NavBtnLink> : null}
 
+		
+
+
+
 		{ isAuth?
 ( 	<NavBtnLink to="/" onClick={()=>dispatch(logout())}>logout </NavBtnLink>
 )
@@ -81,6 +92,7 @@ return (
 	)
 }
 
+
 </Nav>
 
 	</>
@@ -88,4 +100,4 @@ return (
 );
 };
 
-export default Navbar;
+export default Navbar;

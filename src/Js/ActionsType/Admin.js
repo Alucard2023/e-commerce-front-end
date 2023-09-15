@@ -8,3 +8,5 @@ export const GET_ALLUSERS = "GET_ALLUSERS ";
 export const LOAD_USERS = "LOAD_USERS";
 export const CLEAR_ERRORSA= "CLEAR_ERRORSA";
 export const CLEAR_SUCCESSA = "CLEAR_SUCCESSA";
+export const GET_ADMIN = "GET_ADMIN";
+
